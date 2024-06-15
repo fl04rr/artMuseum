@@ -1,3 +1,4 @@
+import { BREAKPOINTS } from '@/constants/constants';
 import styled from 'styled-components';
 
 export const StyledSingleArt = styled.div`
@@ -6,7 +7,7 @@ export const StyledSingleArt = styled.div`
   display: flex;
   gap: 10rem;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${BREAKPOINTS.MOBILE}px) {
     flex-direction: column;
   }
 `;
@@ -17,7 +18,7 @@ export const SingleArtImage = styled.article`
   display: flex;
   justify-content: end;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${BREAKPOINTS.MOBILE}px) {
     width: 100%;
     min-width: auto;
     height: auto;

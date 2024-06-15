@@ -1,4 +1,4 @@
-import { theme } from '@/utils/theme';
+import { theme } from '@/utils/styles/theme';
 import styled from 'styled-components';
 
 export const StyledNavbar = styled.div<{ $isOpen: boolean }>`

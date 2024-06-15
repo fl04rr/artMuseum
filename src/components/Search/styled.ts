@@ -1,3 +1,4 @@
+import { BREAKPOINTS } from '@/constants/constants';
 import styled from 'styled-components';
 
 export const StyledSearch = styled.input`
@@ -14,7 +15,7 @@ export const StyledSearch = styled.input`
     outline: none;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${BREAKPOINTS.MOBILE}px) {
     width: calc(100vw - 40px);
   }
 `;

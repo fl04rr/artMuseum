@@ -1,3 +1,4 @@
+import { BREAKPOINTS } from '@/constants/constants';
 import styled from 'styled-components';
 
 export const ModalWrapper = styled.dialog`
@@ -13,7 +14,7 @@ export const ModalWrapper = styled.dialog`
   background-color: transparent;
   backdrop-filter: blur(5px);
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${BREAKPOINTS.MOBILE}px) {
     align-items: end;
   }
 `;
@@ -28,7 +29,7 @@ export const StyledModal = styled.div`
   padding: 4rem;
   border-radius: 4rem;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${BREAKPOINTS.MOBILE}px) {
     width: 100%;
     border-radius: 4rem 4rem 0 0;
   }

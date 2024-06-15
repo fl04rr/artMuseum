@@ -1,3 +1,4 @@
+import { BREAKPOINTS } from '@/constants/constants';
 import styled from 'styled-components';
 
 export const StyledHeaderTemplate = styled.div`
@@ -6,12 +7,11 @@ export const StyledHeaderTemplate = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: ${BREAKPOINTS.MODULE}px) {
     padding: 4rem 20px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${BREAKPOINTS.MOBILE}px) {
     padding: 4rem 16px;
 
     img {
@@ -62,7 +62,7 @@ export const StyledHeaderContainer = styled.div`
     display: none;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${BREAKPOINTS.MOBILE}px) {
     & > *:nth-child(1) {
       display: none;
     }

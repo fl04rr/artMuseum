@@ -1,3 +1,4 @@
+import { BREAKPOINTS } from '@/constants/constants';
 import styled from 'styled-components';
 
 export const StyledContainer = styled.div<{
@@ -12,11 +13,11 @@ export const StyledContainer = styled.div<{
   flex-direction: ${(props) => props.$direction || 'column'};
   gap: ${(props) => (props.$gap ? `${props.$gap}rem` : '5rem')};
 
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: ${BREAKPOINTS.MODULE}) {
     padding: 0 20px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${BREAKPOINTS.MOBILE}px) {
     padding: 0 16px;
   }
 `;

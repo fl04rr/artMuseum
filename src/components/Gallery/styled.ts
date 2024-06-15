@@ -1,3 +1,4 @@
+import { BREAKPOINTS } from '@/constants/constants';
 import styled from 'styled-components';
 
 export const StyledGallery = styled.div`
@@ -14,12 +15,11 @@ export const GalleryWrapper = styled.div`
   column-gap: 7.5rem;
   width: 100%;
   height: 64.25rem;
-
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: ${BREAKPOINTS.MODULE}px) {
     height: auto;
   }
 
-  @media screen and (max-width: 1279px) {
+  @media screen and (max-width: ${BREAKPOINTS.MODULE - 1}px) {
     grid-template-columns: repeat(3, 40vw);
     column-gap: 3.5rem;
     overflow-x: scroll;
@@ -30,7 +30,7 @@ export const GalleryWrapper = styled.div`
     }
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: ${BREAKPOINTS.MOBILE - 1}px) {
     grid-template-columns: repeat(3, 80vw);
   }
 `;
