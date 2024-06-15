@@ -1,5 +1,5 @@
-import { theme } from "@/utils/theme";
-import styled from "styled-components";
+import { theme } from '@/utils/theme';
+import styled from 'styled-components';
 
 export const StyledNavbar = styled.div<{ $isOpen: boolean }>`
   width: 80vw;
@@ -7,14 +7,14 @@ export const StyledNavbar = styled.div<{ $isOpen: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
-  transform: translateX(${(props) => (props.$isOpen ? "0" : "-100%")});
+  transform: translateX(${(props) => (props.$isOpen ? '0' : '-100%')});
   background-color: ${theme.colors.backgroundDark};
   padding: 20rem 4rem;
   z-index: 3;
   transition: transform 0.2s;
 
   &:after {
-    content: "";
+    content: '';
     width: 20vw;
     height: 100vh;
     position: fixed;

@@ -1,5 +1,5 @@
-import React, { ReactNode } from "react";
-import CustomError from "../Error/CustomError";
+import React, { ReactNode } from 'react';
+import CustomError from '../Error/CustomError';
 
 type ErrorBoundaryProps = {
   children: ReactNode;
@@ -10,10 +10,7 @@ type ErrorBoundaryState = {
   error: Error | null;
 };
 
-export default class ErrorBoundary extends React.Component<
-  ErrorBoundaryProps,
-  ErrorBoundaryState
-> {
+export default class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false, error: null };
@@ -24,14 +21,12 @@ export default class ErrorBoundary extends React.Component<
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error("Error caught in Error Boundary: ", error, errorInfo);
+    console.error('Error caught in Error Boundary: ', error, errorInfo);
   }
 
   render() {
     if (this.state.hasError) {
-      return (
-        <CustomError title="Something went wrong, pls update page or try later" />
-      );
+      return <CustomError title="Something went wrong, pls update page or try later" />;
     }
 
     return this.props.children;

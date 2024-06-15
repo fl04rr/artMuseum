@@ -1,14 +1,12 @@
-import { renderHook } from "@testing-library/react-hooks";
-import useFetch from "./useFetch";
+import { renderHook } from '@testing-library/react-hooks';
+import useFetch from './useFetch';
 
-describe("useFetch hook", () => {
-  it("should fetch data and set isLoading to false when fetchFunction resolves", async () => {
-    const mockData = "Mock data";
+describe('useFetch hook', () => {
+  it('should fetch data and set isLoading to false when fetchFunction resolves', async () => {
+    const mockData = 'Mock data';
     const fetchFunction = jest.fn().mockResolvedValue(mockData);
 
-    const { result, waitForNextUpdate } = renderHook(() =>
-      useFetch(fetchFunction),
-    );
+    const { result, waitForNextUpdate } = renderHook(() => useFetch(fetchFunction));
 
     expect(result.current.isLoading).toBe(true);
     expect(result.current.data).toBeUndefined();
@@ -21,13 +19,11 @@ describe("useFetch hook", () => {
     expect(result.current.error).toBeNull();
   });
 
-  it("should set isLoading to false and error when fetchFunction rejects", async () => {
-    const mockError = new Error("Mock error");
+  it('should set isLoading to false and error when fetchFunction rejects', async () => {
+    const mockError = new Error('Mock error');
     const fetchFunction = jest.fn().mockRejectedValue(mockError);
 
-    const { result, waitForNextUpdate } = renderHook(() =>
-      useFetch(fetchFunction),
-    );
+    const { result, waitForNextUpdate } = renderHook(() => useFetch(fetchFunction));
 
     expect(result.current.isLoading).toBe(true);
     expect(result.current.data).toBeUndefined();
@@ -40,9 +36,9 @@ describe("useFetch hook", () => {
     expect(result.current.error).toBe(mockError);
   });
 
-  it("should refetch when update dependency changes", async () => {
-    const mockData1 = "Mock data 1";
-    const mockData2 = "Mock data 2";
+  it('should refetch when update dependency changes', async () => {
+    const mockData1 = 'Mock data 1';
+    const mockData2 = 'Mock data 2';
     let count = 0;
     const fetchFunction = jest.fn().mockImplementation(() => {
       count++;

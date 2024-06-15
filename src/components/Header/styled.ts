@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledHeaderTemplate = styled.div`
   width: 100%;
@@ -21,14 +21,9 @@ export const StyledHeaderTemplate = styled.div`
 `;
 
 export const StyledHeader = styled(StyledHeaderTemplate).attrs(() => ({
-  as: "header",
+  as: 'header',
 }))`
-  background: linear-gradient(
-    90deg,
-    #343333 38.05%,
-    #484848 69.22%,
-    #282828 98.98%
-  );
+  background: linear-gradient(90deg, #343333 38.05%, #484848 69.22%, #282828 98.98%);
 
   position: sticky;
   top: 0;
@@ -37,8 +32,8 @@ export const StyledHeader = styled(StyledHeaderTemplate).attrs(() => ({
 
 export const StyledNav = styled.nav<{ $column?: boolean }>`
   display: flex;
-  align-items: ${(props) => (props.$column ? "start" : "center")};
-  ${(props) => props.$column && "flex-direction: column"};
+  align-items: ${(props) => (props.$column ? 'start' : 'center')};
+  ${(props) => props.$column && 'flex-direction: column'};
 
   gap: 2rem;
 `;

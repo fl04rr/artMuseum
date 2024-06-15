@@ -1,7 +1,7 @@
-import React from "react";
-import { CardDescriptionWrapper, StyledCard } from "../Card/styled";
-import ArtDescription from "../ArtItem/ArtDescription";
-import Image from "../Image/Image";
+import React from 'react';
+import { CardDescriptionWrapper, StyledCard } from '../Card/styled';
+import ArtDescription from '../ArtItem/ArtDescription';
+import Image from '../Image/Image';
 
 export default function CardSkeleton() {
   return (
@@ -9,9 +9,9 @@ export default function CardSkeleton() {
       <Image />
       <CardDescriptionWrapper>
         <ArtDescription
-          author={"Contacting the Author"}
-          title={"Remembering the title"}
-          styleTitle={"Checking style"}
+          author={'Contacting the Author'}
+          title={'Remembering the title'}
+          styleTitle={'Checking style'}
           id={-1}
         />
       </CardDescriptionWrapper>

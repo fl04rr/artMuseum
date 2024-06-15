@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { StyledHeaderTemplate, StyledHeaderWrapper } from "../Header/styled";
+import styled from 'styled-components';
+import { StyledHeaderTemplate, StyledHeaderWrapper } from '../Header/styled';
 
 export const StyledFooter = styled(StyledHeaderTemplate).attrs(() => ({
-  as: "footer",
+  as: 'footer',
 }))`
   background: ${(props) => props.theme.colors.backgroundLight};
 `;

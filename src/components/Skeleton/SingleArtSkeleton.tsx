@@ -1,6 +1,6 @@
-import React from "react";
-import SingleArtContent from "../SingleArt/SingleArtContent";
-import { LOADING_PHRASES } from "@/constants/phrases";
+import React from 'react';
+import SingleArtContent from '../SingleArt/SingleArtContent';
+import { LOADING_PHRASES } from '@/constants/phrases';
 
 export default function SingleArtSkeleton() {
   return (

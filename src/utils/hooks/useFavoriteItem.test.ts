@@ -1,13 +1,13 @@
-import { renderHook } from "@testing-library/react-hooks";
-import { useFavorite } from "../FavoriteProvider";
-import useFavoriteItem from "./useFavoriteItem";
+import { renderHook } from '@testing-library/react-hooks';
+import { useFavorite } from '../FavoriteProvider';
+import useFavoriteItem from './useFavoriteItem';
 
-jest.mock("../FavoriteProvider", () => ({
+jest.mock('../FavoriteProvider', () => ({
   useFavorite: jest.fn(),
 }));
 
-describe("useFavoriteItem hook", () => {
-  it("should call toggleFavorite when toggle is called with itemId not equal to -1", () => {
+describe('useFavoriteItem hook', () => {
+  it('should call toggleFavorite when toggle is called with itemId not equal to -1', () => {
     const mockIsFavorite = jest.fn().mockReturnValue(true);
     const mockToggleFavorite = jest.fn();
     (useFavorite as jest.Mock).mockReturnValue({
@@ -22,7 +22,7 @@ describe("useFavoriteItem hook", () => {
     expect(mockToggleFavorite).toHaveBeenCalledWith(itemId);
   });
 
-  it("should not call toggleFavorite when toggle is called with itemId equal to -1", () => {
+  it('should not call toggleFavorite when toggle is called with itemId equal to -1', () => {
     const mockIsFavorite = jest.fn().mockReturnValue(true);
     const mockToggleFavorite = jest.fn();
     (useFavorite as jest.Mock).mockReturnValue({
@@ -38,7 +38,7 @@ describe("useFavoriteItem hook", () => {
     expect(mockToggleFavorite).not.toHaveBeenCalled();
   });
 
-  it("should return isFavorite value from useFavorite", () => {
+  it('should return isFavorite value from useFavorite', () => {
     const mockIsFavorite = jest.fn().mockReturnValue(true);
     const mockToggleFavorite = jest.fn();
     (useFavorite as jest.Mock).mockReturnValue({

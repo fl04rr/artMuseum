@@ -1,22 +1,21 @@
-import { renderHook, act } from "@testing-library/react-hooks";
-import useDebounce from "./useDebounce";
+import { renderHook, act } from '@testing-library/react-hooks';
+import useDebounce from './useDebounce';
 
 jest.useFakeTimers();
 
-describe("useDebounce hook", () => {
+describe('useDebounce hook', () => {
   afterEach(() => {
     jest.clearAllTimers();
   });
 
-  test("should update debounced value after delay", () => {
-    const initialValue = "initial";
-    const updatedValue = "updated";
+  test('should update debounced value after delay', () => {
+    const initialValue = 'initial';
+    const updatedValue = 'updated';
     const delay = 200;
 
-    const { result, rerender } = renderHook(
-      ({ value, delay }) => useDebounce(value, delay),
-      { initialProps: { value: initialValue, delay } },
-    );
+    const { result, rerender } = renderHook(({ value, delay }) => useDebounce(value, delay), {
+      initialProps: { value: initialValue, delay },
+    });
 
     act(() => {
       jest.advanceTimersByTime(delay - 1);

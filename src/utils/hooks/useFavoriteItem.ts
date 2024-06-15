@@ -1,4 +1,4 @@
-import { useFavorite } from "../FavoriteProvider";
+import { useFavorite } from '../FavoriteProvider';
 
 export default function useFavoriteItem(itemId: number) {
   const { isFavorite, toggleFavorite } = useFavorite();

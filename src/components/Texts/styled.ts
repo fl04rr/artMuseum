@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MainHeading = styled.h1`
-  font-family: "Lexend Deca";
+  font-family: 'Lexend Deca';
   font-size: 8rem;
   line-height: 10rem;
   font-weight: 900;
@@ -15,7 +15,7 @@ export const MainHeading = styled.h1`
 `;
 
 export const Heading = styled.h2`
-  font-family: "Lexend Deca";
+  font-family: 'Lexend Deca';
   font-size: 4rem;
   line-height: 5rem;
   color: ${(props) => props.theme.colors.secondary};
@@ -27,15 +27,13 @@ export const Subtext = styled.small<{
   $inline?: boolean;
   $defaultColor?: boolean;
 }>`
-  font-family: "Lexend Deca";
+  font-family: 'Lexend Deca';
   font-size: 2rem;
   line-height: 2.5rem;
   color: ${(props) =>
-    props.$defaultColor
-      ? props.theme.colors.secondary
-      : props.theme.colors.accentLight};
-  display: ${(props) => (props.$inline ? "inline" : "block")};
-  text-align: ${(props) => (props.$center ? "center" : "start")};
+    props.$defaultColor ? props.theme.colors.secondary : props.theme.colors.accentLight};
+  display: ${(props) => (props.$inline ? 'inline' : 'block')};
+  text-align: ${(props) => (props.$center ? 'center' : 'start')};
 `;
 
 export const SubtextBold = styled(Subtext)`
@@ -44,7 +42,7 @@ export const SubtextBold = styled(Subtext)`
 `;
 
 export const ItemTitle = styled.p`
-  font-family: "Lexend Deca";
+  font-family: 'Lexend Deca';
   font-weight: 500;
   font-size: 2.25rem;
   color: ${(props) => props.theme.colors.secondary};
@@ -72,6 +70,6 @@ export const SingleItemAuthor = styled.p`
   font-size: 3rem;
   line-height: 3.75rem;
   font-weight: 400;
-  font-family: "Lexend Deca";
+  font-family: 'Lexend Deca';
   color: ${(props) => props.theme.colors.accentLight};
 `;

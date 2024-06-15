@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Button = styled.button<{ $favorite?: boolean }>`
   display: flex;
@@ -9,10 +9,7 @@ export const Button = styled.button<{ $favorite?: boolean }>`
   border-radius: 50%;
   background-color: ${(props) => props.theme.colors.backgroundLight};
   border: 1px solid
-    ${(props) =>
-      props.$favorite
-        ? props.theme.colors.accent
-        : props.theme.colors.backgroundDark};
+    ${(props) => (props.$favorite ? props.theme.colors.accent : props.theme.colors.backgroundDark)};
   transition:
     background-color 0.2s,
     border 0.2s;

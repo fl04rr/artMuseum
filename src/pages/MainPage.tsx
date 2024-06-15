@@ -1,27 +1,28 @@
-import ArtItems from "@/components/ArtItems/ArtItems";
-import { Container, Wrapper } from "@/components/Blocks/styled";
-import Gallery from "@/components/Gallery/Gallery";
-import Search from "@/components/Search/Search";
-import { Heading, MainHeading, Subtext } from "@/components/Texts/styled";
-import { getArts, getArtsByPage } from "@/utils/getArts";
-import useFetch from "@/utils/hooks/useFetch";
-import { Art } from "@/utils/types";
-import React from "react";
+import ArtItems from '@/components/ArtItems/ArtItems';
+import { Container, Wrapper } from '@/components/Blocks/styled';
+import Gallery from '@/components/Gallery/Gallery';
+import Search from '@/components/Search/Search';
+import { Heading, MainHeading, Subtext } from '@/components/Texts/styled';
+import { getArts, getArtsByPage } from '@/utils/getArts';
+import useFetch from '@/utils/hooks/useFetch';
+import { Art } from '@/utils/types';
+import React from 'react';
 
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function MainPage() {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const { data: galleryItems, isLoading: isGalleryItemsLoading } = useFetch<
-    Art[] | undefined
-  >(() => getArtsByPage(currentPage), currentPage);
+  const { data: galleryItems, isLoading: isGalleryItemsLoading } = useFetch<Art[] | undefined>(
+    () => getArtsByPage(currentPage),
+    currentPage,
+  );
 
-  const { data: artItems, isLoading: isArtItemsLoading } = useFetch<
-    Art[] | undefined
-  >(() => getArts());
+  const { data: artItems, isLoading: isArtItemsLoading } = useFetch<Art[] | undefined>(() =>
+    getArts(),
+  );
 
-  document.title = "Museum of Art";
+  document.title = 'Museum of Art';
 
   return (
     <>

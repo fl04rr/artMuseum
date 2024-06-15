@@ -1,14 +1,10 @@
-import React from "react";
-import {
-  SingleArtButtonWrapper,
-  SingleArtImage,
-  StyledSingleArt,
-} from "./styled";
-import SingleArtContent from "./SingleArtContent";
-import { SingleArtType } from "@/utils/types";
-import FavoriteButton from "../FavoriteButton/FavoriteButton";
-import Image from "../Image/Image";
-import SingleArtSkeleton from "../Skeleton/SingleArtSkeleton";
+import React from 'react';
+import { SingleArtButtonWrapper, SingleArtImage, StyledSingleArt } from './styled';
+import SingleArtContent from './SingleArtContent';
+import { SingleArtType } from '@/utils/types';
+import FavoriteButton from '../FavoriteButton/FavoriteButton';
+import Image from '../Image/Image';
+import SingleArtSkeleton from '../Skeleton/SingleArtSkeleton';
 
 type SingleArtProps = {
   artContent: SingleArtType;
@@ -17,7 +13,7 @@ type SingleArtProps = {
 
 export default function SingleArt({ artContent, isLoading }: SingleArtProps) {
   if (!artContent && !isLoading) {
-    throw new Error("ArtContent is undefined");
+    throw new Error('ArtContent is undefined');
   }
 
   return (
@@ -27,7 +23,7 @@ export default function SingleArt({ artContent, isLoading }: SingleArtProps) {
           <FavoriteButton itemId={artContent?.id || -1} />
         </SingleArtButtonWrapper>
 
-        <Image imageId={artContent?.image_id || ""} imageSize={800} />
+        <Image imageId={artContent?.image_id || ''} imageSize={800} />
       </SingleArtImage>
       {isLoading ? (
         <SingleArtSkeleton />

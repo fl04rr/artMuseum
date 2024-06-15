@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledArtItem = styled.article`
   padding: 2rem 1.625rem;

@@ -1,24 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import reportWebVitals from "./reportWebVitals";
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-import InterRegular from "./assets/fonts/Inter-Regular.woff2";
-import InterMedium from "./assets/fonts/Inter-Medium.woff2";
-import InterBold from "./assets/fonts/Inter-Bold.woff2";
-import LexendDecaRegular from "./assets/fonts/LexendDeca-Regular.woff2";
-import LexendDecaMedium from "./assets/fonts/LexendDeca-Medium.woff2";
-import LexendDecaBold from "./assets/fonts/LexendDeca-Bold.woff2";
-import LexendDecaSemiBold from "./assets/fonts/LexendDeca-SemiBold.woff2";
-import LexendDecaLight from "./assets/fonts/LexendDeca-Light.woff2";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import reportWebVitals from './reportWebVitals';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import InterRegular from './assets/fonts/Inter-Regular.woff2';
+import InterMedium from './assets/fonts/Inter-Medium.woff2';
+import InterBold from './assets/fonts/Inter-Bold.woff2';
+import LexendDecaRegular from './assets/fonts/LexendDeca-Regular.woff2';
+import LexendDecaMedium from './assets/fonts/LexendDeca-Medium.woff2';
+import LexendDecaBold from './assets/fonts/LexendDeca-Bold.woff2';
+import LexendDecaSemiBold from './assets/fonts/LexendDeca-SemiBold.woff2';
+import LexendDecaLight from './assets/fonts/LexendDeca-Light.woff2';
 
-import { RouterProvider } from "react-router-dom";
-import { theme } from "./utils/theme";
-import { FavoriteProvider } from "./utils/FavoriteProvider";
-import { AppRouter } from "./AppRouter";
+import { RouterProvider } from 'react-router-dom';
+import { theme } from './utils/theme';
+import { FavoriteProvider } from './utils/FavoriteProvider';
+import { AppRouter } from './AppRouter';
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement,
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 const GlobalStyles = createGlobalStyle`
   @font-face {

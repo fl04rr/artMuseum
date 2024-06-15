@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const PaginationWrapper = styled.div`
   display: flex;
@@ -32,32 +32,26 @@ const PaginationButton = styled.button`
 `;
 
 export const PaginationArrow = styled(PaginationButton)<{ $active?: boolean }>`
-  visibility: ${(props) => !props.$active && "hidden"};
+  visibility: ${(props) => !props.$active && 'hidden'};
 `;
 
 export const PaginationNumber = styled(PaginationButton)<{ $current: boolean }>`
-  font-family: "Lexend Deca";
+  font-family: 'Lexend Deca';
   font-size: 2.25rem;
   line-height: 3rem;
-  font-weight: ${(props) => (props.$current ? "600" : "300")};
+  font-weight: ${(props) => (props.$current ? '600' : '300')};
   color: ${(props) =>
-    props.$current
-      ? props.theme.colors.backgroundLight
-      : props.theme.colors.secondary};
-  background-color: ${(props) =>
-    props.$current ? props.theme.colors.accent : "transparent"};
+    props.$current ? props.theme.colors.backgroundLight : props.theme.colors.secondary};
+  background-color: ${(props) => (props.$current ? props.theme.colors.accent : 'transparent')};
 
   &:hover {
     background-color: ${(props) =>
-      props.$current
-        ? props.theme.colors.accent
-        : props.theme.colors.backgroundMedium};
+      props.$current ? props.theme.colors.accent : props.theme.colors.backgroundMedium};
   }
 
   @media (hover: none) {
     &:hover {
-      background-color: ${(props) =>
-        props.$current ? props.theme.colors.accent : "transparent"};
+      background-color: ${(props) => (props.$current ? props.theme.colors.accent : 'transparent')};
     }
   }
 `;

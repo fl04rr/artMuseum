@@ -1,5 +1,5 @@
-import React from "react";
-import { StyledError } from "./styled";
+import React from 'react';
+import { StyledError } from './styled';
 
 type ErrorProps = {
   title: string;

@@ -1,13 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import { ArtContentWrapper, ArtInfoSection, ArtList } from "./styled";
-import {
-  Heading,
-  SingleItemAuthor,
-  Subtext,
-  SubtextBold,
-} from "../Texts/styled";
-import { RESERVE_PHRASES } from "@/constants/phrases";
+import { ArtContentWrapper, ArtInfoSection, ArtList } from './styled';
+import { Heading, SingleItemAuthor, Subtext, SubtextBold } from '../Texts/styled';
+import { RESERVE_PHRASES } from '@/constants/phrases';
 
 type SingleArtContentProps = {
   author: string;
@@ -33,9 +28,7 @@ export default function SingleArtContent({
       <ArtInfoSection>
         <Heading>{title || RESERVE_PHRASES.title}</Heading>
         <ArtList>
-          <SingleItemAuthor>
-            {author || RESERVE_PHRASES.author}
-          </SingleItemAuthor>
+          <SingleItemAuthor>{author || RESERVE_PHRASES.author}</SingleItemAuthor>
           <SubtextBold>{styleTitle || RESERVE_PHRASES.styleTitle}</SubtextBold>
         </ArtList>
       </ArtInfoSection>

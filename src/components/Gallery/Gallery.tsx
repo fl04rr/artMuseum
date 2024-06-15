@@ -1,11 +1,11 @@
-import React, { useMemo } from "react";
+import React, { useMemo } from 'react';
 
-import { GalleryWrapper, StyledGallery } from "./styled";
-import { Art } from "@/utils/types";
-import { ARTS_LIMIT, TOTAL_PAGES } from "@/constants/constants";
-import CardSkeleton from "../Skeleton/CardSkeleton";
-import Card from "../Card/Card";
-import Pagination from "../Pagination/Pagination";
+import { GalleryWrapper, StyledGallery } from './styled';
+import { Art } from '@/utils/types';
+import { ARTS_LIMIT, TOTAL_PAGES } from '@/constants/constants';
+import CardSkeleton from '../Skeleton/CardSkeleton';
+import Card from '../Card/Card';
+import Pagination from '../Pagination/Pagination';
 
 type GalleryProps = {
   currentPage: number;
@@ -14,17 +14,10 @@ type GalleryProps = {
   setCurrentPage: (page: number) => void;
 };
 
-export default function Gallery({
-  currentPage,
-  arts,
-  isLoading,
-  setCurrentPage,
-}: GalleryProps) {
+export default function Gallery({ currentPage, arts, isLoading, setCurrentPage }: GalleryProps) {
   const galleryItems = useMemo(() => {
     if (isLoading) {
-      return [...Array(ARTS_LIMIT)].map((_, index) => (
-        <CardSkeleton key={index} />
-      ));
+      return [...Array(ARTS_LIMIT)].map((_, index) => <CardSkeleton key={index} />);
     }
 
     return arts?.map((el) => (

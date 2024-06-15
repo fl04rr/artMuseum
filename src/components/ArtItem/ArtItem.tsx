@@ -1,8 +1,8 @@
-import React from "react";
-import ArtDescription from "./ArtDescription";
-import { ArtImage, StyledArtItem } from "./styled";
-import { Link } from "react-router-dom";
-import Image from "../Image/Image";
+import React from 'react';
+import ArtDescription from './ArtDescription';
+import { ArtImage, StyledArtItem } from './styled';
+import { Link } from 'react-router-dom';
+import Image from '../Image/Image';
 
 type WorkItemProps = {
   author: string;
@@ -12,13 +12,7 @@ type WorkItemProps = {
   styleTitle: string;
 };
 
-export default function ArtItem({
-  author,
-  title,
-  id,
-  imageId,
-  styleTitle,
-}: WorkItemProps) {
+export default function ArtItem({ author, title, id, imageId, styleTitle }: WorkItemProps) {
   return (
     <StyledArtItem>
       <Link to={`/art/${id}`}>
@@ -26,13 +20,7 @@ export default function ArtItem({
           <Image imageId={imageId} imageSize={80} />
         </ArtImage>
       </Link>
-      <ArtDescription
-        author={author}
-        title={title}
-        id={id}
-        styleTitle={styleTitle}
-        gap={2}
-      />
+      <ArtDescription author={author} title={title} id={id} styleTitle={styleTitle} gap={2} />
     </StyledArtItem>
   );
 }

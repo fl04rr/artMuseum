@@ -1,5 +1,5 @@
-import React, { createContext, ReactNode, useContext } from "react";
-import useLocalStorage from "./hooks/useLocalStorage";
+import React, { createContext, ReactNode, useContext } from 'react';
+import useLocalStorage from './hooks/useLocalStorage';
 
 type FavoriteContextProps = {
   children: ReactNode;
@@ -13,10 +13,8 @@ type FavoriteData = {
 
 const FavoriteContext = createContext<FavoriteData | null>(null);
 
-export const FavoriteProvider: React.FC<FavoriteContextProps> = ({
-  children,
-}) => {
-  const [favorites, setFavorites] = useLocalStorage<number[]>("favorites", []);
+export const FavoriteProvider: React.FC<FavoriteContextProps> = ({ children }) => {
+  const [favorites, setFavorites] = useLocalStorage<number[]>('favorites', []);
 
   const toggleFavorite = (favorite: number) => {
     setFavorites((prevFavorites) =>
@@ -40,7 +38,7 @@ export const FavoriteProvider: React.FC<FavoriteContextProps> = ({
 export const useFavorite = () => {
   const context = useContext(FavoriteContext);
   if (!context) {
-    throw new Error("useFavorite must be used within a FavoriteProvider");
+    throw new Error('useFavorite must be used within a FavoriteProvider');
   }
   return context;
 };

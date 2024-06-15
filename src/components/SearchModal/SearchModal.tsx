@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Art } from "@/utils/types";
-import closeIcon from "../../assets/icons/close.svg";
+import React, { useEffect, useRef, useState } from 'react';
+import { Art } from '@/utils/types';
+import closeIcon from '../../assets/icons/close.svg';
 import {
   ModalWrapper,
   SearchItemsWrapper,
@@ -8,11 +8,11 @@ import {
   StyledModalSearch,
   StyledSortBtnsWrapper,
   StyledSortButton,
-} from "./styled";
-import ArtItems from "../ArtItems/ArtItems";
-import { SearchError, StyledSearch } from "../Search/styled";
-import { Icon } from "../Image/styled";
-import { ErrorMessage } from "formik";
+} from './styled';
+import ArtItems from '../ArtItems/ArtItems';
+import { SearchError, StyledSearch } from '../Search/styled';
+import { Icon } from '../Image/styled';
+import { ErrorMessage } from 'formik';
 
 type SearchModalProps = {
   arts: Art[] | undefined;
@@ -23,7 +23,7 @@ type SearchModalProps = {
   setSearchQuery: (value: string) => void;
 };
 
-type SortMethod = "default" | "az" | "za";
+type SortMethod = 'default' | 'az' | 'za';
 
 export default function SearchModal({
   arts,
@@ -32,22 +32,19 @@ export default function SearchModal({
   searchQuery,
   setSearchQuery,
 }: SearchModalProps) {
-  const [sortMethod, setSortMethod] = useState<SortMethod>("default");
+  const [sortMethod, setSortMethod] = useState<SortMethod>('default');
 
   const handleSortChange = (method: SortMethod) => {
     setSortMethod(method);
   };
 
-  const sortArts = (
-    arts: Art[] | undefined,
-    method: SortMethod,
-  ): Art[] | undefined => {
+  const sortArts = (arts: Art[] | undefined, method: SortMethod): Art[] | undefined => {
     if (!arts) return undefined;
 
     const sortedArts = [...arts];
-    if (method === "az") {
+    if (method === 'az') {
       sortedArts.sort((a, b) => a.title.localeCompare(b.title));
-    } else if (method === "za") {
+    } else if (method === 'za') {
       sortedArts.sort((a, b) => b.title.localeCompare(a.title));
     }
 
@@ -72,7 +69,7 @@ export default function SearchModal({
     }
 
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = '';
     };
   }, []);
 
@@ -94,30 +91,20 @@ export default function SearchModal({
         </StyledModalSearch>
         <StyledSortBtnsWrapper>
           <StyledSortButton
-            $current={sortMethod === "default"}
-            onClick={() => handleSortChange("default")}
+            $current={sortMethod === 'default'}
+            onClick={() => handleSortChange('default')}
           >
             Default
           </StyledSortButton>
-          <StyledSortButton
-            $current={sortMethod === "az"}
-            onClick={() => handleSortChange("az")}
-          >
-            {"A -> Z"}
+          <StyledSortButton $current={sortMethod === 'az'} onClick={() => handleSortChange('az')}>
+            {'A -> Z'}
           </StyledSortButton>
-          <StyledSortButton
-            $current={sortMethod === "za"}
-            onClick={() => handleSortChange("za")}
-          >
-            {"Z -> A"}
+          <StyledSortButton $current={sortMethod === 'za'} onClick={() => handleSortChange('za')}>
+            {'Z -> A'}
           </StyledSortButton>
         </StyledSortBtnsWrapper>
         <SearchItemsWrapper>
-          <ArtItems
-            arts={sortedArts}
-            isLoading={isLoading}
-            previewItemsCount={10}
-          />
+          <ArtItems arts={sortedArts} isLoading={isLoading} previewItemsCount={10} />
         </SearchItemsWrapper>
       </StyledModal>
     </ModalWrapper>

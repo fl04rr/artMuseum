@@ -1,5 +1,5 @@
-import React from "react";
-import { FC, useState } from "react";
+import React from 'react';
+import { FC, useState } from 'react';
 import {
   StyledBurgerMenu,
   StyledHeader,
@@ -7,18 +7,18 @@ import {
   StyledHeaderWrapper,
   StyledLink,
   StyledNav,
-} from "./styled";
-import logo from "../../assets/logo.svg";
-import homeIcon from "../../assets/icons/home.svg";
-import bookmarkIcon from "../../assets/icons/bookmark.svg";
-import { Link } from "react-router-dom";
-import burgerIcon from "../../assets/icons/menu.svg";
-import closeIcon from "../../assets/icons/close.svg";
-import Navbar from "../Navbar/Navbar";
+} from './styled';
+import logo from '../../assets/logo.svg';
+import homeIcon from '../../assets/icons/home.svg';
+import bookmarkIcon from '../../assets/icons/bookmark.svg';
+import { Link } from 'react-router-dom';
+import burgerIcon from '../../assets/icons/menu.svg';
+import closeIcon from '../../assets/icons/close.svg';
+import Navbar from '../Navbar/Navbar';
 
 const navItems = [
-  { title: "Home", icon: homeIcon, url: "/" },
-  { title: "Your favorites", icon: bookmarkIcon, url: "/favorites" },
+  { title: 'Home', icon: homeIcon, url: '/' },
+  { title: 'Your favorites', icon: bookmarkIcon, url: '/favorites' },
 ];
 
 const Header: FC = () => {
@@ -28,7 +28,7 @@ const Header: FC = () => {
     <>
       <StyledHeader>
         <StyledHeaderWrapper>
-          <Link to={"/"}>
+          <Link to={'/'}>
             <img src={logo} alt="logo" />
           </Link>
           <StyledHeaderContainer>
@@ -42,10 +42,7 @@ const Header: FC = () => {
               ))}
             </StyledNav>
             <StyledBurgerMenu onClick={() => setIsOpen(!isOpen)}>
-              <img
-                src={isOpen ? closeIcon : burgerIcon}
-                alt={isOpen ? "close btn" : "open btn"}
-              />
+              <img src={isOpen ? closeIcon : burgerIcon} alt={isOpen ? 'close btn' : 'open btn'} />
             </StyledBurgerMenu>
           </StyledHeaderContainer>
         </StyledHeaderWrapper>

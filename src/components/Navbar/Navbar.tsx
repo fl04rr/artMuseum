@@ -1,10 +1,10 @@
-import React from "react";
-import { NavbarLink, StyledNavbar } from "./styled";
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
-import { NavItem } from "@/utils/types";
-import { StyledNav } from "../Header/styled";
-import { ItemTitle } from "../Texts/styled";
+import React from 'react';
+import { NavbarLink, StyledNavbar } from './styled';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { NavItem } from '@/utils/types';
+import { StyledNav } from '../Header/styled';
+import { ItemTitle } from '../Texts/styled';
 
 type NavbarProps = {
   isOpen: boolean;
@@ -13,7 +13,7 @@ type NavbarProps = {
 };
 export default function Navbar({ isOpen, navItems, setIsOpen }: NavbarProps) {
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   }, [isOpen]);
 
   return (
