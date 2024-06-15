@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 import { SearchIcon, StyledSearch } from './styled';
@@ -47,7 +47,9 @@ export default function Search() {
                 placeholder="Search art, artist, work..."
                 onClick={() => setIsModalOpen(true)}
                 value={searchQuery}
-                onChange={(e: any) => handleSearchQueryChange(e.target.value)}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                  handleSearchQueryChange(e.target.value)
+                }
               />
               <SearchIcon src={searchIcon} alt="search icon" />
             </Form>
