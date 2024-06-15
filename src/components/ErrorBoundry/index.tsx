@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import CustomError from '../Error/CustomError';
+import CustomError from '../CustomError';
 
 type ErrorBoundaryProps = {
   children: ReactNode;

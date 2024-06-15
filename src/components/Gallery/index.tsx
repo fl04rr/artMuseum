@@ -3,9 +3,9 @@ import React, { useMemo } from 'react';
 import { GalleryWrapper, StyledGallery } from './styled';
 import { Art } from '@/utils/types';
 import { ARTS_LIMIT, TOTAL_PAGES } from '@/constants/constants';
-import CardSkeleton from '../Skeleton/CardSkeleton';
-import Card from '../Card/Card';
-import Pagination from '../Pagination/Pagination';
+import CardSkeleton from '../CardSkeleton/CardSkeleton';
+import Card from '../Card';
+import Pagination from '../Pagination';
 
 type GalleryProps = {
   currentPage: number;

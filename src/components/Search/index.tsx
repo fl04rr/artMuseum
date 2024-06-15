@@ -6,7 +6,7 @@ import searchIcon from '../../assets/icons/search.svg';
 import useFetch from '@/utils/hooks/useFetch';
 import useDebouce from '@/utils/hooks/useDebounce';
 import { searchArts } from '@/utils/getArts';
-import SearchModal from '../SearchModal/SearchModal';
+import SearchModal from '../SearchModal';
 
 export const validationSchema = Yup.object().shape({
   searchQuery: Yup.string().trim().required('Search query is required.'),

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CardDescriptionWrapper, StyledCard } from './styled';
-import Image from '../Image/Image';
-import ArtDescription from '../ArtItem/ArtDescription';
+import Image from '../Image';
+import ArtDescription from '../ArtDescription';
 
 export type CardProps = {
   id: number;

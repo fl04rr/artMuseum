@@ -4,7 +4,7 @@ import App from './App';
 import MainPage from './pages/MainPage';
 import ArtPage from './pages/ArtPage';
 import FavoritesPage from './pages/FavoritesPage';
-import CustomError from './components/Error/CustomError';
+import CustomError from './components/CustomError';
 
 export const AppRouter = createBrowserRouter([
   {

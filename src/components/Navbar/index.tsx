@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { NavItem } from '@/utils/types';
 import { StyledNav } from '../Header/styled';
-import { ItemTitle } from '../Texts/styled';
+import ItemTitle from '../ItemTitle';
 
 type NavbarProps = {
   isOpen: boolean;

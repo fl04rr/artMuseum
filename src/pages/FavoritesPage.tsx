@@ -3,10 +3,13 @@ import favoriteIcon from '../assets/icons/favorite.svg';
 import { useFavorite } from '@/utils/FavoriteProvider';
 import useFetch from '@/utils/hooks/useFetch';
 import { getFavoritesArts } from '@/utils/getArts';
-import { Container, Wrapper } from '@/components/Blocks/styled';
-import { Heading, MainHeading, Subtext } from '@/components/Texts/styled';
 import { Icon } from '@/components/Image/styled';
-import ArtItems from '@/components/ArtItems/ArtItems';
+import ArtItems from '@/components/ArtItems';
+import Wrapper from '@/components/Wrapper';
+import Container from '@/components/Container';
+import MainHeading from '@/components/MainHeading';
+import Heading from '@/components/Heading';
+import Subtext from '@/components/Subtext';
 
 export default function FavoritesPage() {
   const { favorites } = useFavorite();
@@ -29,7 +32,7 @@ export default function FavoritesPage() {
       <Wrapper>
         <Container>
           <div>
-            <Subtext $center>Saved by you</Subtext>
+            <Subtext center>Saved by you</Subtext>
             <Heading>
               {favorites.length > 0 ? 'Your favorites list' : "Maybe you'll like it"}
             </Heading>

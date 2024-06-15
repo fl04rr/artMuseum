@@ -9,7 +9,7 @@ import {
   StyledSortBtnsWrapper,
   StyledSortButton,
 } from './styled';
-import ArtItems from '../ArtItems/ArtItems';
+import ArtItems from '../ArtItems';
 import { SearchError, StyledSearch } from '../Search/styled';
 import { Icon } from '../Image/styled';
 import { ErrorMessage } from 'formik';

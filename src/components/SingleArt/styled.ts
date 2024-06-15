@@ -25,32 +25,6 @@ export const SingleArtImage = styled.article`
   /* height: 100%; */
 `;
 
-export const ArtContentWrapper = styled.article`
-  width: 100%;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  /* @media screen and (max-width: 768px){ */
-  gap: 7rem;
-  /* } */
-`;
-
-export const ArtInfoSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-`;
-
-export const ArtList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-
-  list-style-type: none;
-`;
-
 export const SingleArtButtonWrapper = styled.div`
   position: absolute;
   z-index: 2;

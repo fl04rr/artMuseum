@@ -1,8 +1,11 @@
-import ArtItems from '@/components/ArtItems/ArtItems';
-import { Container, Wrapper } from '@/components/Blocks/styled';
-import Gallery from '@/components/Gallery/Gallery';
-import Search from '@/components/Search/Search';
-import { Heading, MainHeading, Subtext } from '@/components/Texts/styled';
+import ArtItems from '@/components/ArtItems';
+import Container from '@/components/Container';
+import Gallery from '@/components/Gallery';
+import Heading from '@/components/Heading';
+import MainHeading from '@/components/MainHeading';
+import Search from '@/components/Search';
+import Subtext from '@/components/Subtext';
+import Wrapper from '@/components/Wrapper';
 import { getArts, getArtsByPage } from '@/utils/getArts';
 import useFetch from '@/utils/hooks/useFetch';
 import { Art } from '@/utils/types';
@@ -27,7 +30,7 @@ export default function MainPage() {
   return (
     <>
       <Wrapper>
-        <Container $gap={9}>
+        <Container gap={9}>
           <MainHeading>
             let&apos;s find some <span>art</span>
             <br /> here!
@@ -40,7 +43,7 @@ export default function MainPage() {
       <Wrapper>
         <Container>
           <div>
-            <Subtext $center>Topics for you</Subtext>
+            <Subtext center>Topics for you</Subtext>
             <Heading>Our special gallery</Heading>
           </div>
           <Gallery
@@ -55,7 +58,7 @@ export default function MainPage() {
       <Wrapper>
         <Container>
           <div>
-            <Subtext $center>Here some more</Subtext>
+            <Subtext center>Here some more</Subtext>
             <Heading>Other works for you</Heading>
           </div>
           <ArtItems arts={artItems} isLoading={isArtItemsLoading} />

@@ -1,9 +1,9 @@
 import React from 'react';
 import { ArtItemsWrapper } from './styled';
 import { Art } from '@/utils/types';
-import ArtItemSkeleton from '../Skeleton/ArtItemSkeleton';
+import ArtItemSkeleton from '../ArtItemSkeleton/ArtItemSkeleton';
 import { PREVIEW_ITEMS_COUNT } from '@/constants/constants';
-import ArtItem from '../ArtItem/ArtItem';
+import ArtItem from '../ArtItem';
 
 type ArtItemsProps = {
   arts: Art[] | undefined;

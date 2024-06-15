@@ -1,10 +1,10 @@
 import React from 'react';
 import { SingleArtButtonWrapper, SingleArtImage, StyledSingleArt } from './styled';
-import SingleArtContent from './SingleArtContent';
+import SingleArtContent from '../SingleArtContent';
 import { SingleArtType } from '@/utils/types';
-import FavoriteButton from '../FavoriteButton/FavoriteButton';
-import Image from '../Image/Image';
-import SingleArtSkeleton from '../Skeleton/SingleArtSkeleton';
+import FavoriteButton from '../FavoriteButton';
+import Image from '../Image';
+import SingleArtSkeleton from '../SingleArtSkeleton/SingleArtSkeleton';
 
 type SingleArtProps = {
   artContent: SingleArtType;

@@ -1,5 +1,5 @@
 import React from 'react';
-import SingleArtContent from '../SingleArt/SingleArtContent';
+import SingleArtContent from '../SingleArtContent';
 import { LOADING_PHRASES } from '@/constants/phrases';
 
 export default function SingleArtSkeleton() {

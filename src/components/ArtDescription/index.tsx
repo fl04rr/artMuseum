@@ -1,10 +1,9 @@
 import React from 'react';
-
-import { ArtTextWrapper, StyledArtDescription } from './styled';
 import { Link } from 'react-router-dom';
 import { RESERVE_PHRASES } from '@/constants/phrases';
-import { ItemAuthor, ItemStyleTitle, ItemTitle } from '../Texts/styled';
-import FavoriteButton from '../FavoriteButton/FavoriteButton';
+import FavoriteButton from '../FavoriteButton';
+import { ArtTextWrapper, ItemAuthor, ItemStyleTitle, StyledArtDescription } from './styled';
+import ItemTitle from '../ItemTitle';
 
 type ArtDescriptionProps = {
   title: string;

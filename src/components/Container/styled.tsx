@@ -1,17 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.section<{
-  $gap?: number;
-  $direction?: string;
-}>`
-  width: 100%;
-  margin: 15rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const Container = styled.div<{
+export const StyledContainer = styled.div<{
   $gap?: number;
   $direction?: string;
 }>`

@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { ArtContentWrapper, ArtInfoSection, ArtList } from './styled';
-import { Heading, SingleItemAuthor, Subtext, SubtextBold } from '../Texts/styled';
 import { RESERVE_PHRASES } from '@/constants/phrases';
+import { ArtContentWrapper, ArtInfoSection, ArtList, SingleItemAuthor } from './styled';
+import Heading from '../Heading';
+import Subtext from '../Subtext';
 
 type SingleArtContentProps = {
   author: string;
@@ -29,7 +30,7 @@ export default function SingleArtContent({
         <Heading>{title || RESERVE_PHRASES.title}</Heading>
         <ArtList>
           <SingleItemAuthor>{author || RESERVE_PHRASES.author}</SingleItemAuthor>
-          <SubtextBold>{styleTitle || RESERVE_PHRASES.styleTitle}</SubtextBold>
+          <Subtext bold>{styleTitle || RESERVE_PHRASES.styleTitle}</Subtext>
         </ArtList>
       </ArtInfoSection>
 
@@ -38,26 +39,26 @@ export default function SingleArtContent({
 
         <ArtList>
           <div>
-            <Subtext $inline>Place of Origin: </Subtext>
-            <Subtext $defaultColor $inline>
+            <Subtext inline>Place of Origin: </Subtext>
+            <Subtext defaultColor inline>
               {originPlace || RESERVE_PHRASES.placeOfOrigin}
             </Subtext>
           </div>
           <div>
-            <Subtext $inline>Dimensions: Sheet: </Subtext>
-            <Subtext $defaultColor $inline>
+            <Subtext inline>Dimensions: Sheet: </Subtext>
+            <Subtext defaultColor inline>
               {dimensions || RESERVE_PHRASES.dimensions}
             </Subtext>
           </div>
           <div>
-            <Subtext $inline>Credit Line: </Subtext>
-            <Subtext $defaultColor $inline>
+            <Subtext inline>Credit Line: </Subtext>
+            <Subtext defaultColor inline>
               {creditLine || RESERVE_PHRASES.creditLine}
             </Subtext>
           </div>
           <div>
-            <Subtext $inline>copyright Notice: </Subtext>
-            <Subtext $defaultColor $inline>
+            <Subtext inline>copyright Notice: </Subtext>
+            <Subtext defaultColor inline>
               {copyrightNotice || RESERVE_PHRASES.copyright}
             </Subtext>
           </div>

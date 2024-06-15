@@ -14,7 +14,7 @@ import bookmarkIcon from '../../assets/icons/bookmark.svg';
 import { Link } from 'react-router-dom';
 import burgerIcon from '../../assets/icons/menu.svg';
 import closeIcon from '../../assets/icons/close.svg';
-import Navbar from '../Navbar/Navbar';
+import Navbar from '../Navbar';
 
 const navItems = [
   { title: 'Home', icon: homeIcon, url: '/' },

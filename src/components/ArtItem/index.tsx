@@ -1,8 +1,8 @@
 import React from 'react';
-import ArtDescription from './ArtDescription';
 import { ArtImage, StyledArtItem } from './styled';
 import { Link } from 'react-router-dom';
-import Image from '../Image/Image';
+import Image from '../Image';
+import ArtDescription from '../ArtDescription';
 
 type WorkItemProps = {
   author: string;
