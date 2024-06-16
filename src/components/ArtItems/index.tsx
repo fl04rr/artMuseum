@@ -1,9 +1,11 @@
 import React from 'react';
-import { ArtItemsWrapper } from './styled';
-import { Art } from '@/utils/types';
-import ArtItemSkeleton from '../ArtItemSkeleton/ArtItemSkeleton';
+
 import { PREVIEW_ITEMS_COUNT } from '@/constants/constants';
+import { Art } from '@/utils/types';
+
 import ArtItem from '../ArtItem';
+import ArtItemSkeleton from '../ArtItemSkeleton/ArtItemSkeleton';
+import { ArtItemsWrapper } from './styled';
 
 type ArtItemsProps = {
   arts: Art[] | undefined;
@@ -15,9 +17,9 @@ export default function ArtItems({ arts, isLoading, previewItemsCount }: ArtItem
   return (
     <ArtItemsWrapper>
       {isLoading
-        ? [...Array(previewItemsCount || PREVIEW_ITEMS_COUNT)].map((_, index) => (
-            <ArtItemSkeleton key={index} />
-          ))
+        ? [...Array(previewItemsCount !== undefined ? previewItemsCount : PREVIEW_ITEMS_COUNT)].map(
+            (_, index) => <ArtItemSkeleton key={index} />,
+          )
         : arts?.map((el) => (
             <ArtItem
               key={el.id}
