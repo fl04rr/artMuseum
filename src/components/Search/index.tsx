@@ -2,11 +2,11 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 import { SearchIcon, StyledSearch } from './styled';
-import searchIcon from '../../assets/icons/search.svg';
 import useFetch from '@/utils/hooks/useFetch';
 import useDebouce from '@/utils/hooks/useDebounce';
 import { searchArts } from '@/utils/getArts';
 import SearchModal from '../SearchModal';
+import { icons } from '@/utils/images';
 
 export const validationSchema = Yup.object().shape({
   searchQuery: Yup.string().trim().required('Search query is required.'),
@@ -51,7 +51,7 @@ export default function Search() {
                   handleSearchQueryChange(e.target.value)
                 }
               />
-              <SearchIcon src={searchIcon} alt="search icon" />
+              <SearchIcon src={icons.searchIcon.src} alt={icons.searchIcon.alt} />
             </Form>
             {isModalOpen && (
               <SearchModal

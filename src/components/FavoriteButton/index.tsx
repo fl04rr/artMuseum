@@ -1,8 +1,7 @@
 import React from 'react';
 import { Button } from './styled';
-import bookmarkIcon from '../../assets/icons/bookmark.svg';
-import bookmarkFilledIcon from '../../assets/icons/bookmarkFilled.svg';
 import useFavoriteItem from '@/utils/hooks/useFavoriteItem';
+import { icons } from '@/utils/images';
 
 type Props = {
   itemId: number;
@@ -10,9 +9,12 @@ type Props = {
 
 export default function FavoriteButton({ itemId }: Props) {
   const { isFavorite, toggle } = useFavoriteItem(itemId);
+
+  const currentIcon = isFavorite ? icons.bookmarkFilledIcon : icons.bookmarkIcon;
+
   return (
     <Button onClick={toggle} disabled={itemId === -1}>
-      <img src={isFavorite ? bookmarkFilledIcon : bookmarkIcon} alt="bookmarkIcon" />
+      <img src={currentIcon.src} alt={currentIcon.alt} />
     </Button>
   );
 }

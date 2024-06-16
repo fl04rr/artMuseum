@@ -8,17 +8,13 @@ import {
   StyledLink,
   StyledNav,
 } from './styled';
-import logo from '../../assets/logo.svg';
-import homeIcon from '../../assets/icons/home.svg';
-import bookmarkIcon from '../../assets/icons/bookmark.svg';
 import { Link } from 'react-router-dom';
-import burgerIcon from '../../assets/icons/menu.svg';
-import closeIcon from '../../assets/icons/close.svg';
 import Navbar from '../Navbar';
+import { icons, images } from '@/utils/images';
 
 const navItems = [
-  { title: 'Home', icon: homeIcon, url: '/' },
-  { title: 'Your favorites', icon: bookmarkIcon, url: '/favorites' },
+  { title: 'Home', icon: icons.homeIcon.src, url: '/' },
+  { title: 'Your favorites', icon: icons.bookmarkIcon.src, url: '/favorites' },
 ];
 
 const Header: FC = () => {
@@ -29,7 +25,7 @@ const Header: FC = () => {
       <StyledHeader>
         <StyledHeaderWrapper>
           <Link to={'/'}>
-            <img src={logo} alt="logo" />
+            <img src={images.logoWhite.src} alt={images.logoWhite.src} />
           </Link>
           <StyledHeaderContainer>
             <StyledNav>
@@ -42,7 +38,10 @@ const Header: FC = () => {
               ))}
             </StyledNav>
             <StyledBurgerMenu onClick={() => setIsOpen(!isOpen)}>
-              <img src={isOpen ? closeIcon : burgerIcon} alt={isOpen ? 'close btn' : 'open btn'} />
+              <img
+                src={isOpen ? icons.closeIcon.src : icons.menuIcon.src}
+                alt={isOpen ? 'close btn' : 'open btn'}
+              />
             </StyledBurgerMenu>
           </StyledHeaderContainer>
         </StyledHeaderWrapper>

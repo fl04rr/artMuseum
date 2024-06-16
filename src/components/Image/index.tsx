@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ImageWrapper, Img } from './styled';
 import getImage from '@/utils/getImage';
-import logoIcon from '../../assets/logoIcon.svg';
+import { icons } from '@/utils/images';
 
 type Props = {
   imageId?: string;
@@ -15,7 +15,7 @@ export default function Image({ imageId, imageSize }: Props) {
       {imageId && !isError && (
         <Img src={getImage(imageSize, imageId)} alt="art" onError={() => setIsError(true)} />
       )}
-      {isError && <Img src={logoIcon} alt="default icon" $error />}
+      {isError && <Img src={icons.logoIcon.src} alt={icons.logoIcon.alt} $error />}
     </ImageWrapper>
   );
 }

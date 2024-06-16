@@ -1,8 +1,8 @@
 import React from 'react';
 import { PaginationArrow, PaginationNumber, PaginationWrapper } from './styled';
-import arrowIcon from '../../assets/icons/arrow.svg';
 import { TOTAL_PAGES } from '@/constants/constants';
 import usePagination from '@/utils/hooks/usePagination';
+import { icons } from '@/utils/images';
 
 type PaginationProps = {
   totalPages: number;
@@ -20,7 +20,7 @@ export default function Pagination({ totalPages, currentPage, setCurrentPage }: 
   return (
     <PaginationWrapper>
       <PaginationArrow $active={currentPage > 1} onClick={() => handlePreviousPage()}>
-        <img src={arrowIcon} alt="arrow icon" />
+        <img src={icons.arrowIcon.src} alt={icons.arrowIcon.alt} />
       </PaginationArrow>
       {[...Array(totalPages)].map((_, index) => {
         return (
@@ -34,7 +34,7 @@ export default function Pagination({ totalPages, currentPage, setCurrentPage }: 
         );
       })}
       <PaginationArrow $active={TOTAL_PAGES > currentPage} onClick={() => handleNextPage()}>
-        <img src={arrowIcon} alt="arrow icon" />
+        <img src={icons.arrowIcon.src} alt={icons.arrowIcon.alt} />
       </PaginationArrow>
     </PaginationWrapper>
   );

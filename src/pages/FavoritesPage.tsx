@@ -1,5 +1,4 @@
 import React from 'react';
-import favoriteIcon from '../assets/icons/favorite.svg';
 import { useFavorite } from '@/utils/FavoriteProvider';
 import useFetch from '@/utils/hooks/useFetch';
 import { getFavoritesArts } from '@/utils/getArts';
@@ -10,6 +9,7 @@ import Container from '@/components/Container';
 import MainHeading from '@/components/MainHeading';
 import Heading from '@/components/Heading';
 import Subtext from '@/components/Subtext';
+import { icons } from '@/utils/images';
 
 export default function FavoritesPage() {
   const { favorites } = useFavorite();
@@ -24,7 +24,7 @@ export default function FavoritesPage() {
           <MainHeading>
             Here are your
             <br />
-            <Icon src={favoriteIcon} alt={'favorite icon'} />
+            <Icon src={icons.favoriteIcon.src} alt={icons.favoriteIcon.alt} />
             <span>Favorites</span>
           </MainHeading>
         </Container>

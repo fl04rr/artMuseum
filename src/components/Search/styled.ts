@@ -17,6 +17,7 @@ export const StyledSearch = styled.input`
 
   @media (max-width: ${BREAKPOINTS.MOBILE}px) {
     width: calc(100vw - 40px);
+    font-size: 2.75rem;
   }
 `;
 

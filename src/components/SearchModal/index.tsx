@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Art } from '@/utils/types';
-import closeIcon from '../../assets/icons/close.svg';
 import {
   ModalWrapper,
   SearchItemsWrapper,
@@ -13,6 +12,7 @@ import ArtItems from '../ArtItems';
 import { SearchError, StyledSearch } from '../Search/styled';
 import { Icon } from '../Image/styled';
 import { ErrorMessage } from 'formik';
+import { icons } from '@/utils/images';
 
 type SearchModalProps = {
   arts: Art[] | undefined;
@@ -86,7 +86,7 @@ export default function SearchModal({
           />
           <ErrorMessage name="searchQuery" component={SearchError} />
           <button onClick={handleClose}>
-            <Icon src={closeIcon} alt="close icon" />
+            <Icon src={icons.closeIcon.src} alt={icons.closeIcon.alt} />
           </button>
         </StyledModalSearch>
         <StyledSortBtnsWrapper>

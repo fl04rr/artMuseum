@@ -1,17 +1,16 @@
 import React from 'react';
 import { StyledFooter, StyledFooterWrapper } from './styled';
-import logo from '../../assets/logo-2.svg';
-import modsenLogo from '../../assets/modsen.svg';
 import { Link } from 'react-router-dom';
+import { images } from '@/utils/images';
 
 export default function Footer() {
   return (
     <StyledFooter>
       <StyledFooterWrapper>
         <Link to={'/'}>
-          <img src={logo} alt="logo" />
+          <img src={images.logoBlack.src} alt={images.logoBlack.alt} />
         </Link>
-        <img src={modsenLogo} alt="logo" />
+        <img src={images.logoModsen.src} alt={images.logoModsen.alt} />
       </StyledFooterWrapper>
     </StyledFooter>
   );
