@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavbarLink, StyledNavbar } from './styled';
+import { NavbarLink, StyledNavbar, StyledOverlay } from './styled';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { NavItem } from '@/utils/types';
@@ -29,6 +29,7 @@ export default function Navbar({ isOpen, navItems, setIsOpen }: NavbarProps) {
             </Link>
           ))}
         </StyledNav>
+        <StyledOverlay $isOpen={isOpen} onClick={() => setIsOpen(false)} />
       </StyledNavbar>
     </>
   );
