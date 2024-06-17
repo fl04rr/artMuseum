@@ -1,8 +1,10 @@
-import React from 'react';
-import { PaginationArrow, PaginationNumber, PaginationWrapper } from './styled';
+import React, { useMemo } from 'react';
+
 import { TOTAL_PAGES } from '@/constants/constants';
 import usePagination from '@/utils/hooks/usePagination';
 import { icons } from '@/utils/images';
+
+import { PaginationArrow, PaginationNumber, PaginationWrapper } from './styled';
 
 type PaginationProps = {
   totalPages: number;
@@ -17,12 +19,17 @@ export default function Pagination({ totalPages, currentPage, setCurrentPage }: 
     setCurrentPage,
   });
 
+  const pageNumbers = useMemo(
+    () => [...Array(totalPages)].map((_, index) => index + 1),
+    [totalPages],
+  );
+
   return (
     <PaginationWrapper>
       <PaginationArrow $active={currentPage > 1} onClick={() => handlePreviousPage()}>
         <img src={icons.arrowIcon.src} alt={icons.arrowIcon.alt} />
       </PaginationArrow>
-      {[...Array(totalPages)].map((_, index) => {
+      {pageNumbers.map((_, index) => {
         return (
           <PaginationNumber
             $current={currentPage === index + 1}

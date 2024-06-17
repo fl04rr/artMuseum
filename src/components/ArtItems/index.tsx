@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { PREVIEW_ITEMS_COUNT } from '@/constants/constants';
 import { Art } from '@/utils/types';
@@ -13,7 +13,7 @@ type ArtItemsProps = {
   previewItemsCount?: number;
 };
 
-export default function ArtItems({ arts, isLoading, previewItemsCount }: ArtItemsProps) {
+function ArtItems({ arts, isLoading, previewItemsCount }: ArtItemsProps) {
   return (
     <ArtItemsWrapper>
       {isLoading
@@ -33,3 +33,5 @@ export default function ArtItems({ arts, isLoading, previewItemsCount }: ArtItem
     </ArtItemsWrapper>
   );
 }
+
+export default memo(ArtItems);

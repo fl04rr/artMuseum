@@ -1,8 +1,9 @@
-import React from 'react';
-import { ArtImage, StyledArtItem } from './styled';
+import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
-import Image from '../Image';
+
 import ArtDescription from '../ArtDescription';
+import Image from '../Image';
+import { ArtImage, StyledArtItem } from './styled';
 
 type WorkItemProps = {
   author: string;
@@ -12,7 +13,7 @@ type WorkItemProps = {
   styleTitle: string;
 };
 
-export default function ArtItem({ author, title, id, imageId, styleTitle }: WorkItemProps) {
+function ArtItem({ author, title, id, imageId, styleTitle }: WorkItemProps) {
   return (
     <StyledArtItem>
       <Link to={`/art/${id}`}>
@@ -24,3 +25,5 @@ export default function ArtItem({ author, title, id, imageId, styleTitle }: Work
     </StyledArtItem>
   );
 }
+
+export default memo(ArtItem);

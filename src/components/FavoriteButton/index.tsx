@@ -1,13 +1,15 @@
-import React from 'react';
-import { Button } from './styled';
+import React, { memo } from 'react';
+
 import useFavoriteItem from '@/utils/hooks/useFavoriteItem';
 import { icons } from '@/utils/images';
+
+import { Button } from './styled';
 
 type Props = {
   itemId: number;
 };
 
-export default function FavoriteButton({ itemId }: Props) {
+function FavoriteButton({ itemId }: Props) {
   const { isFavorite, toggle } = useFavoriteItem(itemId);
 
   const currentIcon = isFavorite ? icons.bookmarkFilledIcon : icons.bookmarkIcon;
@@ -18,3 +20,5 @@ export default function FavoriteButton({ itemId }: Props) {
     </Button>
   );
 }
+
+export default memo(FavoriteButton);

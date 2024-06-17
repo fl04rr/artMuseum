@@ -1,5 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { ErrorMessage } from 'formik';
+
+import { icons } from '@/utils/images';
 import { Art } from '@/utils/types';
+
+import ArtItems from '../ArtItems';
+import { Icon } from '../Image/styled';
+import { SearchError, StyledSearch } from '../Search/styled';
 import {
   ModalWrapper,
   SearchItemsWrapper,
@@ -8,11 +15,6 @@ import {
   StyledSortBtnsWrapper,
   StyledSortButton,
 } from './styled';
-import ArtItems from '../ArtItems';
-import { SearchError, StyledSearch } from '../Search/styled';
-import { Icon } from '../Image/styled';
-import { ErrorMessage } from 'formik';
-import { icons } from '@/utils/images';
 
 type SearchModalProps = {
   arts: Art[] | undefined;
@@ -51,7 +53,7 @@ export default function SearchModal({
     return sortedArts;
   };
 
-  const sortedArts = sortArts(arts, sortMethod);
+  const sortedArts = useMemo(() => sortArts(arts, sortMethod), [arts, sortMethod]);
 
   const handleClose = () => {
     setIsOpen(false);
